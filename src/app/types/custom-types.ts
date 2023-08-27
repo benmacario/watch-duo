@@ -16,13 +16,11 @@ export interface NextApiResponseWithSocket extends NextApiResponse {
 }
 
 export interface ServerToClientEvents {
-  userServerConnection: () => void;
-  hello: (msg: string) => void;
-  userServerDisconnection: (socketid: string) => void;
+  stream: (msg: string) => void;
+  watchStream: (msg: string) => void;
 }
 
 export interface ClientToServerEvents {
-  hello: (msg: string) => void;
-  userServerConnection: () => void;
-  userServerDisconnection: (socketid: string) => void;
+  stream: (msg: string) => void;
+  watchStream: (msg: string) => void;
 }
